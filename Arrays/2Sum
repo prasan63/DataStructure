@@ -1,0 +1,18 @@
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+    // Creating emppty map
+    
+        for(int i = 0; i < nums.length; i++){
+            int current = nums[i];
+            int x = target - current;
+            if(map.containsKey(x)){
+                return new int[] {i, map.get(x)};
+            }
+            //Looking for key and returning it
+            map.put(current, i);
+             //inserting values of array as key in map
+        }
+        return null;
+    }
+}
